@@ -6,6 +6,7 @@ from .serializers import CategorySerializer, TransactionSerializer
 from .models import Category, Transaction
 
 class CategoryCreateView(APIView):
+    permission_classes = [IsAuthenticated]
     def get(self, request, pk=None):
         if pk:
             category = get_object_or_404(Category, pk=pk)
@@ -38,6 +39,7 @@ class CategoryCreateView(APIView):
 
 
 class TransactionView(APIView):
+    permission_classes = [IsAuthenticated]
     def get(self, request, pk=None):
         if pk:
             transaction = get_object_or_404(Transaction, pk=pk)
