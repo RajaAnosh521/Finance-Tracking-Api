@@ -36,5 +36,5 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('user_auth/', include('user_auth.urls')), 
     path('main_app/', include('main_app.urls')),  
-    path('./', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
