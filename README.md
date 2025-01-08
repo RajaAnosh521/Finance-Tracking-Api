@@ -3,7 +3,7 @@
 A RESTful API for managing personal finances, built with Django and Django Rest Framework (DRF). The API supports user authentication (JWT), CRUD operations for categories and transactions, and is documented using Swagger.
 
 ## Note: 
-      That all the endpoints are prefixed by api/
+   "That all the endpoints are prefixed by api/"
 
 ## Features
 - **JWT Authentication**: Secure login, logout, and token refresh.
