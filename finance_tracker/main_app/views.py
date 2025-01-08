@@ -22,7 +22,7 @@ class CategoryCreateView(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response({"data": serializer.data}, status=201)
-        return Response({"data": serializer.errors}, status=400)
+        return Response({"data": serializer.errors}, status=400) 
 
     def put(self, request, pk):
         category = get_object_or_404(Category, pk=pk)

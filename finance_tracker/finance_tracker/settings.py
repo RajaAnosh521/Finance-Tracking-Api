@@ -11,6 +11,12 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import environ
+
+env = environ.Env(
+    # Set default values and casting types
+    DEBUG=(bool, False)
+)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,10 +29,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7r1j9x70k4olj56c%4_6%-t*35j3s9%6%*$^_7wwp@s4=*w524'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['.vercel.app'] 
+SECRET_KEY = env('SECRET_KEY')
 
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS') 
 
 # Application definition
 
@@ -46,6 +53,10 @@ INSTALLED_APPS = [
     'corsheaders',
     'drf_yasg',
 ]
+
+SWAGGER_SETTINGS = {
+    'DEFAULT_API_URL': 'http://127.0.0.1:8000/api/',
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -88,6 +99,17 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': env('DATABASE_NAME'),
+#         'USER': env('DATABASE_USER'),
+#         'PASSWORD': env('DATABASE_PASSWORD'),
+#         'HOST': env('DATABASE_HOST', default='localhost'),
+#         'PORT': env('DATABASE_PORT', default='5432'),
+#     }
+# }
 
 
 # Password validation
