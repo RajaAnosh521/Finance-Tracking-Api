@@ -3,7 +3,7 @@
 A RESTful API for managing personal finances, built with Django and Django Rest Framework (DRF). The API supports user authentication (JWT), CRUD operations for categories and transactions, and is documented using Swagger.
 
 ## Note: 
-   "That all the endpoints are prefixed by api/"
+   " That all the endpoints are prefixed by api/ "
 
 ## Features
 - **JWT Authentication**: Secure login, logout, and token refresh.
@@ -12,9 +12,6 @@ A RESTful API for managing personal finances, built with Django and Django Rest 
 - **Swagger Documentation**: Easy-to-use API reference.
 
 ## Endpoints
-
-### Documentation
-   http://127.0.0.1:8000/api/docs/
 
 ### Authentication
 - `POST /user_auth/register/`: Register a new user.
@@ -34,22 +31,24 @@ A RESTful API for managing personal finances, built with Django and Django Rest 
 - `DELETE /main_app/transaction/<id>/`: Delete a transaction.
 
 ## Setup Instructions
-1. Clone the repository:
-
-   git clone <repository-url>
-   cd finance-tracker
-
-2. Create Virtual Environment and install all libraries:
-
-   python -m venv .venv
-   pip install -r requirements.txt
-
-3. Run all Migrations:
+## Clone the repository:  
    
-   py manage.py makemigrations
-   py manage.py migrate
+      git clone https://github.com/RajaAnosh521/Personal-Finance-Tracking-Api.git
+      cd finance-tracker
 
-4. Run the API:
+##. Create Virtual Environment and install all libraries:
+
+      python -m venv .venv
+      pip install -r requirements.txt
+
+## Run all Migrations:
    
-   py manage.py runserver
+      py manage.py makemigrations
+      py manage.py migrate
+
+## Run the API:
    
+      py manage.py runserver
+   
+### Documentation
+      http://127.0.0.1:8000/api/docs/
