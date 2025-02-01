@@ -20,5 +20,6 @@ from rest_framework import permissions
 
 urlpatterns = [
     path('user_auth/', include('user_auth.urls')), 
-    path('main_app/', include('main_app.urls')),  
+    path('tracker/', include('tracker.urls')),
+  
 ]

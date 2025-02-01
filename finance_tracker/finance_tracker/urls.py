@@ -9,7 +9,7 @@ schema_view = get_schema_view(
         title="API Documentation",
         default_version='v1',
         description="""Finance tracker to track your financial control.
-        note: that all endpoints are prefixed with 'api/'""", 
+        Note: that all endpoints are prefixed with 'api/'""", 
         terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="contact@snippets.local"),
         license=openapi.License(name="BSD License"),
@@ -21,5 +21,5 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),  # Ensure all API routes are prefixed with 'api/'
-    path('api/docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),  # Correct the Swagger docs URL
+    path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),  # Correct the Swagger docs URL
 ]
